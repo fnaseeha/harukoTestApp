@@ -1,0 +1,62 @@
+{
+  "name": "sfdc-dep-viewer",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "start": "(cd frontend && npm start) & export NODE_ENV=dev && heroku local",
+    "debug": "node --inspect ./bin/www",
+    "semantic-release": "semantic-release",
+    "dc-build": "docker-compose up --build",
+    "local": " parallelshell 'node ./bin/www' 'node ./services/worker.js' 'cd frontend && npm start' ",
+    "commit": "git-cz",
+    "update-api": "npm install sfdc-happy-api@latest sfdc-soup@latest"
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "dependencies": {
+    "bull": "^3.7.0",
+    "connect-redis": "^4.0.4",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "cross-blob": "^2.0.0",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.1",
+    "express-session": "^1.17.1",
+    "express-sslify": "1.2.0",
+    "fast-xml-parser": "^3.17.2",
+    "foreman": "^3.0.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1",
+    "node-fetch": "2.6.1",
+    "primeflex": "2.0.0",
+    "redis": "^3.0.2",
+    "sfdc-dependency-api-bulk": "4.0.0",
+    "sfdc-field-utilization": "8.0.0",
+    "sfdc-happy-api": "2.4.0",
+    "sfdc-soup": "8.0.0",
+    "throng": "^4.0.0",
+    "vue3-autocomplete": "1.0.1"
+  },
+  "devDependencies": {
+    "commitizen": "^4.2.0",
+    "cz-conventional-changelog": "^3.2.1",
+    "eslint": "^7.7.0",
+    "nodemon": "^2.0.4",
+    "parallelshell": "3.0.2",
+    "semantic-release": "^17.1.1",
+    "semantic-release-cli": "^5.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pgonzaleznetwork/sfdc-happy-soup.git"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "czConfing": {
+    "path": "node_modules/cz-conventional-changelog"
+  }
+}
